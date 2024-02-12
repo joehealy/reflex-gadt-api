@@ -85,7 +85,7 @@ apiRequestXhr apiUrl = traverseRequesterData
           $ Left
           $ (  "Response could not be decoded for request: "
             <> T.decodeUtf8 (LBS.toStrict $ encode req)
-            <> " Response: "
+            <> "\n\nResponse: \n\n"
             <> (fromMaybe "" (_xhrResponse_responseText xhrResp))
             )
       Just r -> pure $ Right r
